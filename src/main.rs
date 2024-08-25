@@ -11,8 +11,6 @@ const ABOUT: &str =
 const D_V: &str = "MILLISECONDS";
 const R_V: &str = "Repitions per second";
 
-// my current config is 160 30;
-
 #[derive(Parser, Debug)]
 #[command(name = NAME, version = VER, author = AUTHOR, about = ABOUT)]
 struct Args {
@@ -35,12 +33,13 @@ fn main() {
     println!("Delay: {} ms", delay);
     println!("Rate: {} ms", rate);
 
-    platform::windows::set_key_repeat_windows(delay, rate);
-    // if cfg!(target_os = "linux") {
-    //     platform::linux::set_key_repeat_linux(delay, rate);
-    // } else if cfg!(target_os = "windows") {
-    //     platform::windows::set_key_repeat_windows(delay, rate);
-    // } else {
-    //     eprintln!("Unsupported operating system");
-    // }
+    if cfg!(target_os = "linux") {
+        #[cfg(target_os = "linux")]
+        platform::linux::set_key_repeat_linux(delay, rate);
+    } else if cfg!(target_os = "windows") {
+        #[cfg(target_os = "windows")]
+        platform::windows::set_key_repeat_windows(delay, rate);
+    } else {
+        eprintln!("Unsupported operating system");
+    }
 }
