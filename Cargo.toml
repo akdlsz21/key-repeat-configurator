@@ -1,7 +1,7 @@
 [package]
 name = "key_repeat_configurator"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 description = "A key repeat configurator for Windows, Linux (x11, wayland)"
 authors = ["Jihoon Choi akdlsz21@gmail.com"]
 license = "MIT" 
