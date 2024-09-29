@@ -1,13 +1,15 @@
 [package]
 name = "key_repeat_configurator"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+description = "A key repeat configurator for Windows, Linux (x11, wayland)"
+authors = ["Jihoon Choi akdlsz21@gmail.com"]
+license = "MIT" 
 
 [dependencies]
 clap = { version = "4.5.16", features = ["derive", "cargo"] }
 
-
 [target.'cfg(target_os = "windows")'.dependencies]
-winapi = {version = "0.3.9", features = ["winuser"]} 
+winapi = { version = "0.3.9", features = ["winuser"] }
 
-
+[target.'cfg(target_os = "linux")'.dependencies]
