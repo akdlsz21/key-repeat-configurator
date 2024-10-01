@@ -3,4 +3,4 @@
 members = [
    "key-repeat-configurator", 
    "key-repeat-configurator-dioxus"
-]
+, "shared-lib"]
