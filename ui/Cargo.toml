@@ -1,0 +1,14 @@
+[package]
+name = "key-repeat-configurator-dioxus"
+version = "0.1.0"
+authors = ["akdlsz21 <akdlsz21@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+dioxus = { version = "=0.6.0-alpha.2", features = ["desktop"] }
+
+# Debug
+dioxus-logger = "0.5.1"
